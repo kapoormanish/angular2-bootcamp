@@ -11,6 +11,10 @@ import {AuthorsComponent} from './authors.component'
     <div (click)="onDivClick()">
         <button (click)="onClick($event)">Submit</button>
     </div>>
+    <button [class.active]="isActive"
+    [style.backgroundColor]="isActive? 'blue':'grey'"
+    >Submit</button>
+        
     `,
     directives: [CoursesComponent, AuthorsComponent]
 })
@@ -18,6 +22,7 @@ export class AppComponent {
 
     imageUrl="http://lorempixel.com/400/200";
     altText = "some image";
+    isActive=true;
 
     onClick($event){
         console.log("CLICKED!!!", $event);
