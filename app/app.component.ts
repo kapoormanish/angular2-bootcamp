@@ -7,7 +7,20 @@ import {AuthorsComponent} from './authors.component'
     template: `<h1>Hello angular</h1>
     <courses></courses>
     <authors></authors>
+    <div (click)="onDivClick()">
+        <button (click)="onClick($event)">Submit</button>
+    </div>>
     `,
     directives: [CoursesComponent, AuthorsComponent]
 })
-export class AppComponent { }
+export class AppComponent {
+    onClick($event){
+        console.log("CLICKED!!!", $event);
+        $event.stopPropagation();
+    }
+
+    onDivClick(){
+        console.log("handled by div.");
+    }
+
+}
