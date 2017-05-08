@@ -5,6 +5,7 @@ import {AuthorsComponent} from './authors.component'
 @Component({
     selector: 'my-app',
     template: `<h1>Hello angular</h1>
+    <img [src]="imageUrl" bind-alt="altText">
     <courses></courses>
     <authors></authors>
     <div (click)="onDivClick()">
@@ -14,6 +15,10 @@ import {AuthorsComponent} from './authors.component'
     directives: [CoursesComponent, AuthorsComponent]
 })
 export class AppComponent {
+
+    imageUrl="http://lorempixel.com/400/200";
+    altText = "some image";
+
     onClick($event){
         console.log("CLICKED!!!", $event);
         $event.stopPropagation();
