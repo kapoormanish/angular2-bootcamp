@@ -5,6 +5,11 @@ import {AuthorsComponent} from './authors.component'
 @Component({
     selector: 'my-app',
     template: `<h1>Hello angular</h1>
+    <input type="text" [value]="title" (input)="onTextBoxChange($event)">
+    <input type="text" [(ngModel)]="title">
+    <label >{{ title }}</label>
+    <button (click)="title=''">Clear</button>
+    
     <img [src]="imageUrl" bind-alt="altText">
     <courses></courses>
     <authors></authors>
@@ -23,6 +28,7 @@ export class AppComponent {
     imageUrl="http://lorempixel.com/400/200";
     altText = "some image";
     isActive=true;
+    title = "";
 
     onClick($event){
         console.log("CLICKED!!!", $event);
@@ -31,6 +37,10 @@ export class AppComponent {
 
     onDivClick(){
         console.log("handled by div.");
+    }
+
+    onTextBoxChange($event){
+        this.title = $event.target.value;
     }
 
 }
