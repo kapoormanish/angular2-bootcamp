@@ -6,7 +6,7 @@ import {SquareComponent} from './square.component'
 @Component({
     selector: 'my-app',
     template: `<h1>Hello angular</h1>
-    <star></star>
+    <star [state]="true" ></star>
     <input type="text" [value]="title" (input)="onTextBoxChange($event)">
     <input type="text" [(ngModel)]="title">
     <label >{{ title }}</label>
