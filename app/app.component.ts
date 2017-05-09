@@ -2,10 +2,14 @@ import {Component} from 'angular2/core';
 import {CoursesComponent} from './courses.component'
 import {AuthorsComponent} from './authors.component'
 import {SquareComponent} from './square.component'
+import {LikesComponent} from "./likes.component";
+import {ElementRef, Renderer} from "angular2/core"
 
 @Component({
     selector: 'my-app',
     template: `<h1>Hello angular</h1>
+    <likes [isLiked]="false" [likeCount]="4"></likes>
+    
     <star [state]="true" (change)="onStarChange($event)" ></star>
     <input type="text" [value]="title" (input)="onTextBoxChange($event)">
     <input type="text" [(ngModel)]="title">
@@ -23,7 +27,7 @@ import {SquareComponent} from './square.component'
     >Submit</button>
         
     `,
-    directives: [CoursesComponent, AuthorsComponent, SquareComponent]
+    directives: [CoursesComponent, AuthorsComponent, SquareComponent, LikesComponent]
 })
 export class AppComponent {
 
