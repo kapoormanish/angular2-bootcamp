@@ -6,7 +6,7 @@ import {SquareComponent} from './square.component'
 @Component({
     selector: 'my-app',
     template: `<h1>Hello angular</h1>
-    <star [state]="true" ></star>
+    <star [state]="true" (change)="onStarChange($event)" ></star>
     <input type="text" [value]="title" (input)="onTextBoxChange($event)">
     <input type="text" [(ngModel)]="title">
     <label >{{ title }}</label>
@@ -43,6 +43,10 @@ export class AppComponent {
 
     onTextBoxChange($event){
         this.title = $event.target.value;
+    }
+
+    onStarChange($event){
+        console.log($event);
     }
 
 }
