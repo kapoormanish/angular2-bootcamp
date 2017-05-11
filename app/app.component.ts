@@ -3,11 +3,13 @@ import {CoursesComponent} from './courses.component'
 import {AuthorsComponent} from './authors.component'
 import {SquareComponent} from './square.component'
 import {LikesComponent} from "./likes.component";
-import {ElementRef, Renderer} from "angular2/core"
+import {UserVoteComponent} from "./user-vote.component"
 
 @Component({
     selector: 'my-app',
-    template: `<h1>Hello angular</h1>
+    template: `<h1>Hello world</h1>
+    
+    <user-vote></user-vote>
     <likes [isLiked]="false" [likeCount]="4"></likes>
     
     <star [state]="true" (change)="onStarChange($event)" ></star>
@@ -27,7 +29,7 @@ import {ElementRef, Renderer} from "angular2/core"
     >Submit</button>
         
     `,
-    directives: [CoursesComponent, AuthorsComponent, SquareComponent, LikesComponent]
+    directives: [CoursesComponent, AuthorsComponent, SquareComponent, LikesComponent, UserVoteComponent]
 })
 export class AppComponent {
 
