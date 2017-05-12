@@ -8,5 +8,8 @@
 
 </style>
 <br>
-<div (click)="toggleState()" height="100px" width="100px" class="blue" [class.active]="state"  >&nbsp;</div>
+<div (click)="toggleState()"
+     height="100px"
+     width="100px"
+     class="blue" [ngClass]="{'active': state}">&nbsp;</div>
 <br>
