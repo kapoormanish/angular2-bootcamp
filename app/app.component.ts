@@ -5,10 +5,12 @@ import {SquareComponent} from './square.component'
 import {LikesComponent} from "./likes.component";
 import {UserVoteComponent} from "./user-vote.component"
 import {TwitterTimelineComponent} from "./twitter-timeline.component"
+import {TabsComponent} from "./tabs.component"
 
 @Component({
     selector: 'my-app',
     template: `<h1>Hello world</h1>
+    <tabs></tabs>
     <twitter-timeline></twitter-timeline>
     <user-vote></user-vote>
     <likes [isLiked]="false" [likeCount]="4"></likes>
@@ -31,7 +33,7 @@ import {TwitterTimelineComponent} from "./twitter-timeline.component"
         
     `,
     directives: [CoursesComponent, AuthorsComponent, SquareComponent, LikesComponent, UserVoteComponent,
-    TwitterTimelineComponent]
+    TwitterTimelineComponent, TabsComponent]
 })
 export class AppComponent {
 
