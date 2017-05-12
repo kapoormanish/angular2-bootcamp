@@ -6,10 +6,15 @@ import {LikesComponent} from "./likes.component";
 import {UserVoteComponent} from "./user-vote.component"
 import {TwitterTimelineComponent} from "./twitter-timeline.component"
 import {TabsComponent} from "./tabs.component"
-
+import {BootstrapPanel} from "./bootstrap-panel.component"
 @Component({
     selector: 'my-app',
     template: `<h1>Hello world</h1>
+    <bs-panel>
+        <div class="heading">Header</div>
+        <div class="body">Panel Body</div>
+    </bs-panel>
+    
     <tabs></tabs>
     <twitter-timeline></twitter-timeline>
     <user-vote></user-vote>
@@ -33,7 +38,7 @@ import {TabsComponent} from "./tabs.component"
         
     `,
     directives: [CoursesComponent, AuthorsComponent, SquareComponent, LikesComponent, UserVoteComponent,
-    TwitterTimelineComponent, TabsComponent]
+    TwitterTimelineComponent, TabsComponent, BootstrapPanel]
 })
 export class AppComponent {
 
