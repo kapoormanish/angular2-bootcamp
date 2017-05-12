@@ -3,19 +3,18 @@ import {Component, EventEmitter, Input, Output} from "angular2/core";
     selector: "likes",
     template: `
         <style type="text/css">
-            .grey {
-                background-color: grey;,
+            .light-grey {
+                color: lightgray;,
                 cursor: pointer
             }
 
             .liked {
-                background-color: pink;
+                color: pink;
             }
 
         </style>
         <br>
-        <div (click)="toggleState()" height="100px" width="100px" class="grey" [class.liked]="isLiked">&nbsp;</div>
-        <br>
+        <i (click)="toggleState()" class="fa fa-heart light-grey" [class.liked]="isLiked">&nbsp;</i>
         <label >{{ likeCount }}</label>
         <br>
     `

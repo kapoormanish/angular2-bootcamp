@@ -4,11 +4,12 @@ import {AuthorsComponent} from './authors.component'
 import {SquareComponent} from './square.component'
 import {LikesComponent} from "./likes.component";
 import {UserVoteComponent} from "./user-vote.component"
+import {TwitterTimelineComponent} from "./twitter-timeline.component"
 
 @Component({
     selector: 'my-app',
     template: `<h1>Hello world</h1>
-    
+    <twitter-timeline></twitter-timeline>
     <user-vote></user-vote>
     <likes [isLiked]="false" [likeCount]="4"></likes>
     
@@ -29,7 +30,8 @@ import {UserVoteComponent} from "./user-vote.component"
     >Submit</button>
         
     `,
-    directives: [CoursesComponent, AuthorsComponent, SquareComponent, LikesComponent, UserVoteComponent]
+    directives: [CoursesComponent, AuthorsComponent, SquareComponent, LikesComponent, UserVoteComponent,
+    TwitterTimelineComponent]
 })
 export class AppComponent {
 
