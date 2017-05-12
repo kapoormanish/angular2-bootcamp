@@ -6,8 +6,8 @@ import {CourseService} from './course.service'
     <h2>{{ title }}</h2>
     <div *ngIf="courses.length > 0">
         <ul>
-            <li *ngFor="#course of courses">
-                {{ course }}
+            <li *ngFor="#course of courses, #index= index">
+                {{ index + 1 }}:  {{ course }}
             </li>
         </ul>
     </div>
