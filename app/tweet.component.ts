@@ -1,8 +1,10 @@
 import {Component, Input} from "angular2/core";
 import {LikesComponent} from "./likes.component"
+import {SummaryPipe} from "./summary.pipe"
 
 
 @Component({
+    pipes: [SummaryPipe],
     selector: 'tweet',
     template: `
         <style>
@@ -27,7 +29,7 @@ import {LikesComponent} from "./likes.component"
                     <strong>{{ tweet.userTwitterName }} </strong>   
                     <label class="twitter-handle" >@{{ tweet.userTwitterHandle }}</label>
                 </h4>
-                {{ tweet.tweetText }}
+                {{ tweet.tweetText | summary:30:'___' }}
                 <likes [isLiked]="tweet.isLiked" [likeCount]="tweet.likeCount"></likes>
             </div>
         </div>
