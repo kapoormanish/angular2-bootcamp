@@ -9,9 +9,13 @@ import {TabsComponent} from "./tabs.component"
 import {BootstrapPanel} from "./bootstrap-panel.component"
 import {ZippyComponent} from "./zippy.component"
 import {ContactFormComponent} from "./contact-form-component"
+import {SubscriptionFormComponent} from "./subscription-form.component"
 @Component({
     selector: 'my-app',                                                                                             
     template: `<h1>Hello world</h1>
+    <subscription-form></subscription-form>
+    <br><br><br>
+
     <contact-form></contact-form>
     <br><br><br>
     <zippy [title]="zippyContent.title">
@@ -49,7 +53,8 @@ import {ContactFormComponent} from "./contact-form-component"
         
     `,
     directives: [CoursesComponent, AuthorsComponent, SquareComponent, LikesComponent, UserVoteComponent,
-    TwitterTimelineComponent, TabsComponent, BootstrapPanel, ZippyComponent, ContactFormComponent]
+    TwitterTimelineComponent, TabsComponent, BootstrapPanel, ZippyComponent, ContactFormComponent,
+        SubscriptionFormComponent]
 })
 export class AppComponent {
 
