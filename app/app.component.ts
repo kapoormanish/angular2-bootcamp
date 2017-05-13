@@ -8,9 +8,11 @@ import {TwitterTimelineComponent} from "./twitter-timeline.component"
 import {TabsComponent} from "./tabs.component"
 import {BootstrapPanel} from "./bootstrap-panel.component"
 import {ZippyComponent} from "./zippy.component"
+import {ContactFormComponent} from "./contact-form-component"
 @Component({
     selector: 'my-app',                                                                                             
     template: `<h1>Hello world</h1>
+    <contact-form></contact-form>
     <br><br><br>
     <zippy [title]="zippyContent.title">
         {{ zippyContent.content }}
@@ -47,7 +49,7 @@ import {ZippyComponent} from "./zippy.component"
         
     `,
     directives: [CoursesComponent, AuthorsComponent, SquareComponent, LikesComponent, UserVoteComponent,
-    TwitterTimelineComponent, TabsComponent, BootstrapPanel, ZippyComponent]
+    TwitterTimelineComponent, TabsComponent, BootstrapPanel, ZippyComponent, ContactFormComponent]
 })
 export class AppComponent {
 
