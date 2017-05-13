@@ -11,9 +11,13 @@ Sign Up
                        class="form-control"
                        ngControl="username"
                         #username="ngForm"/>
-                <div *ngIf="!username.valid && username.touched"
+                <div *ngIf="username.touched && username.errors && username.errors.required"
                         class="alert alert-danger">
                     Username is required.
+                </div>
+                <div *ngIf="username.touched && username.errors && username.errors.cannotContainSpace"
+                        class="alert alert-danger">
+                    Username contains space on {{ username.errors.cannotContainSpace.indexOfSpace+1 }} position.
                 </div>
             </div>
 
