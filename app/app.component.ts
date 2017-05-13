@@ -7,9 +7,18 @@ import {UserVoteComponent} from "./user-vote.component"
 import {TwitterTimelineComponent} from "./twitter-timeline.component"
 import {TabsComponent} from "./tabs.component"
 import {BootstrapPanel} from "./bootstrap-panel.component"
+import {ZippyComponent} from "./zippy.component"
 @Component({
-    selector: 'my-app',
+    selector: 'my-app',                                                                                             
     template: `<h1>Hello world</h1>
+    <br><br><br>
+    <zippy [title]="zippyContent.title">
+        {{ zippyContent.content }}
+    </zippy>
+    <zippy [title]="zippyContent2.title">
+        {{ zippyContent2.content }}
+    </zippy>
+    <br><br><br>
     <bs-panel>
         <div class="heading">Header</div>
         <div class="body">Panel Body</div>
@@ -38,7 +47,7 @@ import {BootstrapPanel} from "./bootstrap-panel.component"
         
     `,
     directives: [CoursesComponent, AuthorsComponent, SquareComponent, LikesComponent, UserVoteComponent,
-    TwitterTimelineComponent, TabsComponent, BootstrapPanel]
+    TwitterTimelineComponent, TabsComponent, BootstrapPanel, ZippyComponent]
 })
 export class AppComponent {
 
@@ -46,6 +55,12 @@ export class AppComponent {
     altText = "some image";
     isActive=true;
     title = "";
+    zippyContent={title: 'some title',
+        content: 'some content'
+    };
+    zippyContent2={title: 'some title2',
+        content: 'some content2'
+    };
 
     onClick($event){
         console.log("CLICKED!!!", $event);
