@@ -10,9 +10,13 @@ import {BootstrapPanel} from "./bootstrap-panel.component"
 import {ZippyComponent} from "./zippy.component"
 import {ContactFormComponent} from "./contact-form-component"
 import {SubscriptionFormComponent} from "./subscription-form.component"
+import {SignUpFormComponent} from "./signup-from.component"
 @Component({
     selector: 'my-app',                                                                                             
     template: `<h1>Hello world</h1>
+    <signup-form></signup-form>
+    <br><br><br>
+    
     <subscription-form></subscription-form>
     <br><br><br>
 
@@ -54,7 +58,7 @@ import {SubscriptionFormComponent} from "./subscription-form.component"
     `,
     directives: [CoursesComponent, AuthorsComponent, SquareComponent, LikesComponent, UserVoteComponent,
     TwitterTimelineComponent, TabsComponent, BootstrapPanel, ZippyComponent, ContactFormComponent,
-        SubscriptionFormComponent]
+        SubscriptionFormComponent, SignUpFormComponent]
 })
 export class AppComponent {
 
