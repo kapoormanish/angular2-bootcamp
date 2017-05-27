@@ -11,9 +11,13 @@ import {ZippyComponent} from "./zippy.component"
 import {ContactFormComponent} from "./contact-form-component"
 import {SubscriptionFormComponent} from "./subscription-form.component"
 import {SignUpFormComponent} from "./signup-from.component"
+import {PasswordResetComponent} from "./password-reset-form.component"
+
 @Component({
     selector: 'my-app',                                                                                             
     template: `<h1>Hello world</h1>
+    <password-reset-form></password-reset-form>
+    <br><br><br>
     <signup-form></signup-form>
     <br><br><br>
     
@@ -58,7 +62,7 @@ import {SignUpFormComponent} from "./signup-from.component"
     `,
     directives: [CoursesComponent, AuthorsComponent, SquareComponent, LikesComponent, UserVoteComponent,
     TwitterTimelineComponent, TabsComponent, BootstrapPanel, ZippyComponent, ContactFormComponent,
-        SubscriptionFormComponent, SignUpFormComponent]
+        SubscriptionFormComponent, SignUpFormComponent, PasswordResetComponent]
 })
 export class AppComponent {
 
