@@ -12,10 +12,17 @@ import {ContactFormComponent} from "./contact-form-component"
 import {SubscriptionFormComponent} from "./subscription-form.component"
 import {SignUpFormComponent} from "./signup-from.component"
 import {PasswordResetComponent} from "./password-reset-form.component"
+import {ControlGroup, FormBuilder} from "angular2/common";
+import {Observable} from "rxjs/Observable";
 
 @Component({
     selector: 'my-app',                                                                                             
     template: `<h1>Hello world</h1>
+    
+    <form [ngFormModel]="form">
+        <input type="text" ngControl="search">
+    </form>
+    
     <password-reset-form></password-reset-form>
     <br><br><br>
     <signup-form></signup-form>
@@ -76,6 +83,32 @@ export class AppComponent {
     zippyContent2={title: 'some title2',
         content: 'some content2'
     };
+
+    form: ControlGroup;
+
+    constructor(formBuilder: FormBuilder){
+        this.form=formBuilder.group({
+            search: []
+        });
+
+
+        var search=this.form.find('search');
+        search.valueChanges
+            .subscribe(x => console.log(x))
+
+
+        var startDates = [];
+        var startDate = new Date();
+        for(var day = -2; day<=2; day++){
+            var date = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()+day);
+            startDates.push(startDate);
+        }
+
+        Observable.fromArray(startDates)
+            .map(date => console.log("Getting deals for date: "+ date))
+            .subscribe(x => console.log(x))
+
+    }
 
     onClick($event){
         console.log("CLICKED!!!", $event);
