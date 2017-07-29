@@ -12,10 +12,14 @@ import {ContactFormComponent} from "./contact-form-component"
 import {SubscriptionFormComponent} from "./subscription-form.component"
 import {SignUpFormComponent} from "./signup-from.component"
 import {PasswordResetComponent} from "./password-reset-form.component"
+import {UserDetailsComponent} from "./git-hub/user-details.component"
 
 @Component({
     selector: 'my-app',                                                                                             
-    template: `<h1>Hello world</h1>
+    template: `        
+    <git-hub-user-details></git-hub-user-details>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
     <password-reset-form></password-reset-form>
     <br><br><br>
     <signup-form></signup-form>
@@ -62,7 +66,7 @@ import {PasswordResetComponent} from "./password-reset-form.component"
     `,
     directives: [CoursesComponent, AuthorsComponent, SquareComponent, LikesComponent, UserVoteComponent,
     TwitterTimelineComponent, TabsComponent, BootstrapPanel, ZippyComponent, ContactFormComponent,
-        SubscriptionFormComponent, SignUpFormComponent, PasswordResetComponent]
+        SubscriptionFormComponent, SignUpFormComponent, PasswordResetComponent, UserDetailsComponent]
 })
 export class AppComponent {
 
